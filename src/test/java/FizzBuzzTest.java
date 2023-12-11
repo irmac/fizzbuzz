@@ -24,4 +24,13 @@ class FizzBuzzTest {
     void shouldReturnFizzFor15() {
         assertEquals("FizzBuzz", FizzBuzz.fizzBuzz(15));
     }
+    @Test
+    void shouldReturnFizzFor30() {
+        assertEquals("FizzBuzz", FizzBuzz.fizzBuzz(30));
+    }
+
+    @Test
+    void shouldReturniFor2() {
+        assertEquals("i", FizzBuzz.fizzBuzz(2));
+    }
 }
