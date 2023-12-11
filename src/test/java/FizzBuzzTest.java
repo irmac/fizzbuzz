@@ -10,6 +10,13 @@ class FizzBuzzTest {
         assertEquals("Fizz", FizzBuzz.fizzBuzz(3));
     }
 
+    @Test
+    void shouldReturnFizzFor5() {
+        assertEquals("Buzz", FizzBuzz.fizzBuzz(5));
+    }
 
-
+//    @Test
+//    void shouldReturnFizzFor15() {
+//        assertEquals("FizzBuzz", FizzBuzz.fizzBuzz(15));
+//    }
 }

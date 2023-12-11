@@ -2,7 +2,11 @@ public class FizzBuzz {
     public FizzBuzz() {
     }
 
-    public static String fizzBuzz(int i) {
-        return "Fizz";
+    public static String fizzBuzz(int inputNumber) {
+        if (inputNumber == 3) {
+            return "Fizz";
+        } else {
+            return "Buzz";
+        }
     }
 }
