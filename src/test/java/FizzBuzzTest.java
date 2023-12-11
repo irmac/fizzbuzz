@@ -11,12 +11,17 @@ class FizzBuzzTest {
     }
 
     @Test
-    void shouldReturnFizzFor5() {
+    void shouldReturnFizzFor6() {
+        assertEquals("Fizz", FizzBuzz.fizzBuzz(6));
+    }
+
+    @Test
+    void shouldReturnBuzzFor5() {
         assertEquals("Buzz", FizzBuzz.fizzBuzz(5));
     }
 
-//    @Test
-//    void shouldReturnFizzFor15() {
-//        assertEquals("FizzBuzz", FizzBuzz.fizzBuzz(15));
-//    }
+    @Test
+    void shouldReturnFizzFor15() {
+        assertEquals("FizzBuzz", FizzBuzz.fizzBuzz(15));
+    }
 }
