@@ -4,7 +4,7 @@ public class FizzBuzz {
 
     public static String fizzBuzz(int inputNumber) {
 //      if divisible by 5 and 3 its FizzBuzz
-        if ((inputNumber %5 == 0) && (inputNumber %3 ==0)) {
+        if (isDivisibleBy5And3(inputNumber)) {
             return "FizzBuzz";
         }
 //      if divisible by 3 but not 5 its Fizz
@@ -22,5 +22,9 @@ public class FizzBuzz {
 
 
 
+    }
+
+    private static boolean isDivisibleBy5And3(int inputNumber) {
+        return (inputNumber % 5 == 0) && (inputNumber % 3 == 0);
     }
 }
