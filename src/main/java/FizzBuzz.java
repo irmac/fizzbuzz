@@ -8,11 +8,11 @@ public class FizzBuzz {
             return "FizzBuzz";
         }
 //      if divisible by 3 but not 5 its Fizz
-        else if (inputNumber %3 == 0) {
+        else if (isDivisibleBy3(inputNumber)) {
             return "Fizz";
         }
 //      if divisible by 5 but not 3 its Buzz
-        else if (inputNumber %5 == 0){
+        else if (isDivisibleBy5(inputNumber)){
             return "Buzz";
         }
 //      otherwise it should return i
@@ -22,6 +22,14 @@ public class FizzBuzz {
 
 
 
+    }
+
+    private static boolean isDivisibleBy5(int inputNumber) {
+        return inputNumber % 5 == 0;
+    }
+
+    private static boolean isDivisibleBy3(int inputNumber) {
+        return inputNumber % 3 == 0;
     }
 
     private static boolean isDivisibleBy5And3(int inputNumber) {
