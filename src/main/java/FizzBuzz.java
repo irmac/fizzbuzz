@@ -16,8 +16,7 @@ public class FizzBuzz {
             return "Buzz";
         }
 
-        return "i";
-        
+        return ((Integer)inputNumber).toString();
 
     }
 

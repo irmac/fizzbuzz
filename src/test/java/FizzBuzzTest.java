@@ -30,7 +30,7 @@ class FizzBuzzTest {
     }
 
     @Test
-    void shouldReturniFor2() {
-        assertEquals("i", FizzBuzz.fizzBuzz(2));
+    void shouldReturnTwoFor2() {
+        assertEquals("2", FizzBuzz.fizzBuzz(2));
     }
 }
