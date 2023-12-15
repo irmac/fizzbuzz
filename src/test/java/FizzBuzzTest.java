@@ -5,9 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FizzBuzzTest {
 
+    FizzBuzz fizzBuzz = new FizzBuzz();
+
     @Test
     void shouldReturnFizzFor3() {
-        assertEquals("Fizz", FizzBuzz.fizzBuzz(3));
+        assertEquals("Fizz", fizzBuzz.fizzBuzz(3));
     }
 
     @Test

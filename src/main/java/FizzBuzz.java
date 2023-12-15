@@ -3,22 +3,33 @@ public class FizzBuzz {
     }
 
     public static String fizzBuzz(int inputNumber) {
-        if ((inputNumber %5 == 0) && (inputNumber %3 ==0)) {
-//       deal with multiples of 5
+
+        if (isDivisibleByThreeAndFive(inputNumber)) {
             return "FizzBuzz";
         }
-        else if (inputNumber %3 == 0) {
-//      deal with multiples of three
+
+        if (isDivisibleByThree(inputNumber)) {
             return "Fizz";
-        } else if (inputNumber %5 == 0){
-//       deal with multiples of 5
+        }
+
+        if (isDivisibleByFive(inputNumber)) {
             return "Buzz";
         }
-        else {
-            return "i";
-        }
 
-
-
+        return ((Integer)inputNumber).toString();
     }
+
+
+    private static boolean isDivisibleByFive(int inputNumber) {
+        return inputNumber % 5 == 0;
+    }
+
+    private static boolean isDivisibleByThree(int inputNumber) {
+        return inputNumber % 3 == 0;
+    }
+
+    private static boolean isDivisibleByThreeAndFive(int inputNumber) {
+        return isDivisibleByFive(inputNumber) && isDivisibleByThree(inputNumber);
+    }
+
 }
