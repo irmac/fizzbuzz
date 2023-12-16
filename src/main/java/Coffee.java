@@ -1,4 +1,3 @@
-import javax.swing.plaf.BorderUIResource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,13 +18,13 @@ class Coffee {
         orders.add(new CoffeeOrder(CoffeeType.ESPRESSO));
         orders.add(new CoffeeOrder(CoffeeType.MOCHA));
 
-        // All the non -espress orders - these can be made using the standard coffee machine
+        // All the non espresso orders - these can be made using the standard coffee machine
         orders.stream()
                 .filter(order -> order.getCoffeeType() != CoffeeType.ESPRESSO)
                 .map(CoffeeOrder::getCoffeeType)
                 .forEach(regularCoffeeMaker::brewCoffee);
 
-        //Brew esspresso using the espresso maker
+        //Brew espresso using the espresso maker
         orders.stream()
                 .filter(order -> order.getCoffeeType() == CoffeeType.ESPRESSO)
                 .map(CoffeeOrder::getCoffeeType)
