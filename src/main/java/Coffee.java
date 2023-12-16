@@ -7,7 +7,11 @@ class Coffee {
 
     public static void main(String[] args) {
 
-        List<CoffeeOrder>  orders = new ArrayList<>();
+        // Note the type of these is CoffeeMchine but the actual type is ExpressMaker and RegularCoffeeMaker
+        CoffeeMachine espressoMaker = new EspressoMaker();
+        CoffeeMachine regularCoffeeMaker = new RegularCoffeeMaker();
+
+        List<CoffeeOrder> orders = new ArrayList<>();
         orders.add(new CoffeeOrder(CoffeeType.LATTE));
         orders.add(new CoffeeOrder(CoffeeType.CAPPUCCINO));
         orders.add(new CoffeeOrder(CoffeeType.AMERICANO));
@@ -15,30 +19,20 @@ class Coffee {
         orders.add(new CoffeeOrder(CoffeeType.ESPRESSO));
         orders.add(new CoffeeOrder(CoffeeType.MOCHA));
 
-
-        for (CoffeeOrder order: orders) {
-            System.out.println(order.getCoffeeType());
-        }
-
-        // map takes the original stream of coffee orders and maps it into
-        // a stream of coffee types
-        orders.stream().map(CoffeeOrder::getCoffeeType).forEach(System.out::println);
-
-        System.out.println("Filtering out espresso orders");
-
-
-        var filteredOrders =  orders.stream()
+        // All the non -espress orders - these can be made using the standard coffee machine
+        orders.stream()
                 .filter(order -> order.getCoffeeType() != CoffeeType.ESPRESSO)
-                .map(CoffeeOrder::getCoffeeType).toList();
+                .map(CoffeeOrder::getCoffeeType)
+                .forEach(regularCoffeeMaker::brewCoffee);
 
-
-         filteredOrders.forEach(System.out::println);
-
-
+        //Brew esspresso using the espresso maker
+        orders.stream()
+                .filter(order -> order.getCoffeeType() == CoffeeType.ESPRESSO)
+                .map(CoffeeOrder::getCoffeeType)
+                .forEach(espressoMaker::brewCoffee);
 
 
     }
-
 
 
     ;
